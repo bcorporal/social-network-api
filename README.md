@@ -16,14 +16,14 @@
 
 
   ## Installation
-  In order to use the app you must first npm install using the intergated terminal to install dependencies, then run node server.js to start up the server.
+  In order to use the app you must first `npm install` using the intergated terminal to install dependencies, then run node server.js to start up the server.
 
   Technologies Used 
-  node.js
-  Express.js
-  Moment.js
-  Mongoose / MongoDB database
-  Insomnia
+  `node.js`
+  `Express.js`
+  `Moment.js`
+  `Mongoose / MongoDB database`
+  `Insomnia`
 
 
 

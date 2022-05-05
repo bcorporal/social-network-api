@@ -4,7 +4,7 @@ const { User } = require('../models');
 
 const userController = {
 
-  getThoughts(req, res) {
+  getAllUsers(req, res) {
     Thought.find()
       .select("-__v")
       .then(thoughtData => res.json(thoughtData))
@@ -12,7 +12,7 @@ const userController = {
   },
 
   // Get a course
-  getThoughtById(req, res) {
+  getUserById(req, res) {
     Course.findOne({ _id: req.params.courseId })
       .select('-__v')
       .then((course) =>
@@ -23,7 +23,7 @@ const userController = {
       .catch((err) => res.status(500).json(err));
   },
   // Create a course
-  createThought(req, res) {
+  createUser(req, res) {
     Course.create(req.body)
       .then((course) => res.json(course))
       .catch((err) => {
@@ -32,7 +32,7 @@ const userController = {
       });
   },
   // Delete a course
-  deleteThought(req, res) {
+  deleteUser(req, res) {
     Course.findOneAndDelete({ _id: req.params.courseId })
       .then((course) =>
         !course
@@ -43,7 +43,7 @@ const userController = {
       .catch((err) => res.status(500).json(err));
   },
   // Update a course
-  updateThought(req, res) {
+  updateUser(req, res) {
     Course.findOneAndUpdate(
       { _id: req.params.courseId },
       { $set: req.body },
@@ -57,14 +57,13 @@ const userController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  createReaction
+  addFriend
 
 
 
 
 
-
-  deleteReaction
+  deleteFriend
 
 
 

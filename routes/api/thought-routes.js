@@ -9,7 +9,6 @@ const {
   deleteReaction
 } = require('../../controllers/thought-controller');
 
-// /api/courses
 router.route('/').get(getThoughts).post(createThought);
 
 router.route('/:thoughtId').get(getThoughtById).put(updateThought).delete(deleteThought);

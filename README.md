@@ -2,7 +2,7 @@
 
   
   ## Description
-  Back-end API social network web application where users can share their thoughts, react to friends thoughts and create a friend lists that uses a NoSQL database. Uses Express.js for routes, Mongodb and Mongoose to power this app.
+  Back-end API social network web application where users can share their thoughts, react to friends thoughts and create a friend lists that uses a NoSQL database. Uses Express.js for routes, Mongodb and Mongoose to power this app. MongoDB is a popular choice for many social networks due to its speed with large amounts of data and flexibility with unstructured data.
 
 
   
@@ -28,7 +28,7 @@
 
 
   ## Features
-  The ability to view, create, delete, edit user thoughts and friend reactions.
+  Users can share their thoughts, react to friends’ thoughts, and create a friend list. Also used Moment.js to format timestamps for posts.
 
 
 

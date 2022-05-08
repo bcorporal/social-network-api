@@ -5,11 +5,11 @@ const reactionSchema = new Schema(
   {
     reactionId: {
       type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId
+      default: () => new Types.ObjectId()
     },
     reactionBody: {
       type: String,
-      required: "Please enter a reaction",
+      required: true,
       maxlength: 280,
       minlength: 4,
       trim: true,
@@ -21,13 +21,12 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (dateValue) => moment(dateValue).format('MM Do, YYY [at] hh:mm a')
+      get: (dateValue) => moment(dateValue).format('MMM DD, YYY [at] hh:mm a')
     }
   },
   {
     toJSON: {
       getters: true,
-      virtuals: true
     }
   }
 )
@@ -40,13 +39,19 @@ const thoughtSchema = new Schema(
       minlength: 1,
       maxlength: 280
     },
+    createdAt: {
+      type: Date,
+      required: true,
+      default: Date.now,
+      get: (dateValue) => moment(dateValue).format('MMM DD, YYY [at] hh:mm a')
+    },
     username: {
       type: String,
-      required: true
+      required: true,
+      ref: 'user',
     },
     reactions: [reactionSchema]
   },
-
   {
     toJSON: {
       virtuals: true,

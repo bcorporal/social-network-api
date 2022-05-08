@@ -19,7 +19,7 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Create a course
+  // Create a thought
   createThought(req, res) {
     Thought.create(req.body)
       .then(({ _id }) => {
@@ -74,36 +74,36 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // createReaction
-  createReaction(req, res) {
+  // addReaction
+  addReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $set: { reactions: req.body } },
       { new: true }
     )
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: 'No thought with this id!' })
-          : res.json(thought)
+      .then((data) =>
+        !data
+          ? res.status(404).json({ message: 'No reaction with this id!' })
+          : res.json(data)
       )
       .catch((err) => res.status(500).json(err));
   },
 
 
   // deleteReaction
-  deleteReaction(req, res) {
+  removeReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $pull: { reactions: req.params.reactionId } },
       { new: true }
     )
-      .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: 'No thought with this id!' })
-          : res.json(thought)
+      .then((data) =>
+        !data
+          ? res.status(404).json({ message: 'No reaction with this id!' })
+          : res.json(data)
       )
       .catch((err) => res.status(500).json(err));
   },
 };
 
-module.exports = thoughtController
+module.exports = thoughtController;

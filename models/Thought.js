@@ -12,7 +12,7 @@ const reactionSchema = new Schema(
       required: true,
       maxlength: 280,
       minlength: 4,
-      trim: true,
+      trim: true
     },
     username: {
       type: String,
@@ -21,13 +21,14 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (dateValue) => moment(dateValue).format('MMM DD, YYY [at] hh:mm a')
+      get: (dateValue) => moment(dateValue).format('MMM DD, YYYY [at] hh:mm a')
     }
   },
   {
     toJSON: {
       getters: true,
-    }
+    },
+    id: false
   }
 )
 
@@ -43,7 +44,7 @@ const thoughtSchema = new Schema(
       type: Date,
       required: true,
       default: Date.now,
-      get: (dateValue) => moment(dateValue).format('MMM DD, YYY [at] hh:mm a')
+      get: (dateValue) => moment(dateValue).format('MMM DD, YYYY [at] hh:mm a')
     },
     username: {
       type: String,

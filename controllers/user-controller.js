@@ -32,8 +32,8 @@ const userController = {
   },
 
   // Delete a user
-  deleteUser(req, res) {
-    User.findOneAndDelete({ _id: req.params.userId })
+  deleteUser({ params }, res) {
+    User.findOneAndDelete({ _id: params.id })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No user with that ID' })
@@ -72,11 +72,10 @@ const userController = {
   },
 
   // deleteFriend
-  removeFriend(req, res) {
-    User.findOneAndUpdate(
-      { _id: req.params.userId },
-      { $pull: {friends: req.params.friendId} },
-      { runValidators: true, new: true }
+  removeFriend({ params }, res) {
+    User.findOneAndUpdate({ _id: params.id },
+      { $pull: {friends: params.friendId } },
+      { new: true }
     )
       .then((user) =>
         !user

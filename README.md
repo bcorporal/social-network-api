@@ -4,6 +4,9 @@
   ## Description
   Back-end API social network web application where users can share their thoughts, react to friends thoughts and create a friend lists that uses a NoSQL database. Uses Express.js for routes, Mongodb and Mongoose to power this app. MongoDB is a popular choice for many social networks due to its speed with large amounts of data and flexibility with unstructured data.
 
+Video walk-thru Demo- https://drive.google.com/file/d/1PfXFeTTe-1zECNTqfSIcoPXhyUD_CVK8/view
+
+Github Repo- https://github.com/bcorporal/social-network-api.git
 
   
   ## Table of Contents
